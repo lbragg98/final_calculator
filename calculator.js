@@ -7,7 +7,7 @@ function addtoHistory(num1, operator, num2, result) {
         operand1: num1,
         operator: operator,
         operand2: num2,
-        result: result;
+        result: result,
     }
     calculationHistory.push(calculation);
 }
@@ -26,7 +26,7 @@ function subtract(num1, num2) {
 }
 //multipication
 function multiply(num1, num2) {
-    const result = num * num2;
+    const result = num1 * num2;
     addtoHistory(num1, '*', num2, result);
     return result;
 }
@@ -47,14 +47,12 @@ function displayHistory() {
         return;
     }
     console.log("=== Calculation History ===");
-    calculationHistory.forEach((calc, index)) +> {
+    calculationHistory.forEach((calc, index) => {
         console.log(
             `${index + 1}: ${calc.operand1} ${calc.operator} ${calc.operand2} = ${calc.result}`
         );
-    }
-
-}
-console.log(calculationHistory);
+    })
+};
 
 //tests
 console.log(add(8, 1233));
